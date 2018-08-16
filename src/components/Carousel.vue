@@ -5,7 +5,7 @@
         1/{{carouselMenu.length}}
       </p>
       <ul :style="{transform: 'translate(' + carouselIndex * -100 + '%, 0)'}">
-        <li v-for="item in carouselMenu" :key="item.id"><img :src="item.img" :alt="item.info"></li>
+        <li v-for="item in carouselMenu" :key="item.id"><img :src="item.img" :alt="item.info" @touchstart.passive="handle_touch" @touchmove.passive="handle_touch" @touchend.passive="handle_touch"></li>
       </ul>
     </div>
     <div class="carousel_nav">
@@ -34,7 +34,9 @@ export default {
   data () {
     return {
       carouselIndex: 0,
-      heartActive: false
+      heartActive: false,
+      onTouch: false,
+      currentTouchX: null
     }
   },
   methods: {
@@ -43,11 +45,38 @@ export default {
       for (let i = 0; i < theLength; i++) {
         this.carouselMenu[i].isActive = false
       }
-      this.carouselMenu[index].isActive = true
       this.carouselIndex = index
+      this.carouselMenu[this.carouselIndex].isActive = true
     },
     handle_heart_click () {
       this.heartActive === true ? this.heartActive = false : this.heartActive = true
+    },
+    handle_touch (event) {
+      switch (event.type) {
+        case 'touchstart':
+          this.onTouch = true
+          this.currentTouchX = event.touches[0].screenX
+          break
+        case 'touchmove':
+          if (this.onTouch) {
+            switch (true) {
+              case event.touches[0].screenX > this.currentTouchX:
+                if (this.carouselIndex > 0) {
+                  this.handle_nav_click(this.carouselIndex - 1)
+                  this.onTouch = false
+                }
+                break
+              case event.touches[0].screenX < this.currentTouchX:
+                if (this.carouselIndex < this.carouselMenu.length) {
+                  this.handle_nav_click(this.carouselIndex + 1)
+                  this.onTouch = false
+                }
+            }
+          }
+          break
+        case 'touchend':
+          this.onTouch = false
+      }
     }
   },
   mounted () {

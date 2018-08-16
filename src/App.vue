@@ -10,8 +10,8 @@
       <a href="#">德國多代共居</a>
       <a href="#">世代共融系列報導</a>
     </Headbar>
-    <Cover class="cus_cover_bg" src="../static/image_0812/cover_m.jpg" srcWeb="../static/image_0812/cover_pc.jpg"
-    useArrow="yes" useHint="yes">
+    <Cover class="cus_cover_bg" src="@/../static/image_0812/cover_m.jpg" srcWeb="@/../static/image_0812/cover_pc.jpg"
+    useArrow="yes" useHint="yes" arrow-color="#fff">
       <h1 class="cus_cover_title">「我和我的高齡室友」<br>跨世代共居如何迸出奇異火花</h1>
     </Cover>
     <ContentContainer>
@@ -38,7 +38,7 @@
           </div>
         </div>
         <p><br></p>
-        <h4><b>【用Line揪爺爺奶奶出來玩】</b></h4>
+        <h4><b>【用Line揪爺爺奶奶出來玩】</b><img src="@/../static/emote/1f609.png"></h4>
         <p><br></p>
         <p>會想申請青銀共居，是因為我很喜歡跟老年人相處。我跟自己的阿公阿嬤感情很好，但是跟公寓的爺爺奶奶相處又是不同感覺，畢竟不是家人，剛開始會有距離感。但透過平常吃飯、活動時，多去打招呼，爺爺奶奶認識你之後，就會開始關心你。其實跟長輩建立關係不難，只是需要時間。</p>
         <p><br></p>
@@ -52,7 +52,7 @@
         <p><br></p>
         <p>我覺得老人家最需要的是耐心陪伴，他們很期盼我們不時地出現。有時候下課回來，爺爺奶奶會說「很久沒看到妳」，但其實我們昨天才見過面。聽到時感覺心裡有點酸，會想起自己的阿公阿嬤，平常沒有機會這麼頻繁接觸，他們一定也很想我吧。</p>
         <p><br></p>
-        <p class="hash_tag">爺爺奶奶留門縫代表歡迎拜訪</p>
+        <p class="hash_tag">爺爺奶奶留門縫代表歡迎拜訪<img src="@/../static/emote/2763.png"></p>
         <p class="hash_tag">跟長輩之間的小默契</p>
         <p><br></p>
       </div>
@@ -71,13 +71,13 @@
           </div>
         </div>
         <p><br></p>
-        <h4><b>【我給每個孩子一顆彩蛋】</b></h4>
+        <h4><img class="emoImg" src="@/../static/emote/1f44d.png"><img src="@/../static/emote/1f44d.png"><img src="@/../static/emote/1f44d.png"><b>【我給每個孩子一顆彩蛋】</b></h4>
         <p><br></p>
         <p>青銀共居對我來說不是一件新鮮的事。我年輕時在文化大學當行政人員，是天主教弘道社指導老師，所以我跟年輕人的關係一直沒有斷。當時社團學生，來我家當我孩子的家教，我知道他們很多人念書很苦，每次一來我都煮大鍋菜，看他們吃飽，我也覺得很幸福。</p>
         <p><br></p>
         <p>但當時的年輕人，跟現在的年輕人又不一樣。現在的年輕人更花俏，懂電腦啊，我退休時還在用word2007，現在他們已經教我上雲端了。</p>
         <p><br></p>
-        <p>最讓我感動的是一位社福系學生劉莉君，她是第一批參加青銀共居的學生，我做了很多復活節彩蛋，她幫我成立一個粉絲專頁，讓我在上面交朋友，寫蛋的故事。後來她畢業，跟我道別，我很捨不得。不過沒關係，有新同學，希望他們能幫忙把我做的蛋，推上國際舞台！</p>
+        <p>最讓我感動的是一位社福系學生劉莉君，她是第一批參加青銀共居的學生，我做了很多復活節彩蛋，她幫我成立一個粉絲專頁，讓我在上面交朋友，寫蛋的故事。後來她畢業，跟我道別，我很捨不得。不過沒關係，有新同學，希望他們能幫忙把我做的蛋，推上國際舞台！<img class="emoImg" src="@/../static/emote/1f525.png"><img class="emoImg" src="@/../static/emote/1f525.png"><img src="@/../static/emote/1f525.png"></p>
         <p><br></p>
         <Carousel :carouselMenu="AnnaCarouselMenu"></Carousel>
         <p><br></p>
@@ -85,7 +85,7 @@
         <p><br></p>
         <p>住在這裡的每個孩子，我都給他們一顆蛋，他們都放在房間裡。雖然我的腿已經不好使，但我希望我還可以用，我想要自己能夠被用。</p>
         <p><br></p>
-        <p class="hash_tag">每一顆蛋都是祝福</p>
+        <p class="hash_tag">每一顆蛋都是祝福<img class="emoImg" src="@/../static/emote/1f60d.png"><img class="emoImg" src="@/../static/emote/1f60d.png"><img src="@/../static/emote/1f60d.png"></p>
         <p class="hash_tag">分享快樂是抗老的最好方法</p>
         <p><br></p>
         <p><br></p>
@@ -105,13 +105,27 @@
           </div>
         </div>
         <p><br></p>
-        <h4><b>【老人家不是都一個樣子】</b></h4>
+        <h4><b>【老人家不是都一個樣子】</b><img class="emoImg" src="@/../static/emote/1f601.png"><img class="emoImg" src="@/../static/emote/1f601.png"><img class="emoImg" src="@/../static/emote/1f601.png"><img class="emoImg" src="@/../static/emote/1f601.png"><img src="@/../static/emote/1f601.png"></h4>
         <p><br></p>
         <p>住進陽明老人公寓已經五個月了，一開始會想申請，是因為覺得這裡CP值很高，一個月3000元，同學都羨慕，同樣規格在外面租房子，大概要一萬塊吧。</p>
         <p><br></p>
         <p>另一方面，也是因為爸媽支持。我家住台中，爸爸在我小時候，因為工作的關係，曾在台北住過一陣子，他當時30歲，跟一位7、80歲的老房東奶奶同住，算是青銀共居先驅吧。是爸媽鼓勵我，我才願意來申請。</p>
         <p><br></p>
         <p>服務老人家對我來說也是蠻新的體驗，因為我外公外婆在我出生前就走了，爺爺奶奶也在我小時候就過世，我沒機會好好給他們被當孫子疼愛。</p>
+        <p>
+          <img class="emoImg" src="@/../static/emote/1f64f.png">
+          <img class="emoImg" src="@/../static/emote/1f64f.png">
+          <img class="emoImg" src="@/../static/emote/1f64f.png">
+          <img class="emoImg" src="@/../static/emote/1f64f.png">
+          <img class="emoImg" src="@/../static/emote/1f64f.png">
+          <img class="emoImg" src="@/../static/emote/1f64f.png">
+          <img class="emoImg" src="@/../static/emote/1f64f.png">
+          <img class="emoImg" src="@/../static/emote/1f64f.png">
+          <img class="emoImg" src="@/../static/emote/1f64f.png">
+          <img class="emoImg" src="@/../static/emote/1f64f.png">
+          <img class="emoImg" src="@/../static/emote/1f64f.png">
+          <img class="emoImg" src="@/../static/emote/1f64f.png">
+        </p>
         <p><br></p>
         <Carousel :carouselMenu="SterCarouselMenu"></Carousel>
         <p><br></p>
@@ -119,10 +133,10 @@
         <p><br></p>
         <p>以前我也有很多刻板印象，以為老人家就是很寂寞等著人去照顧；但其實他們會自己安排生活，有的忙到不可開交。</p>
         <p><br></p>
-        <p>你以為老人家都晚餐吃飽就回去睡覺，不是，有位爺爺跟我看世界盃 ，法克大戰，看到凌晨一點。有些爺爺奶奶也跟我一樣，半夜才睡，睡到中午才醒，他們的生活也一點都不無聊，很會找事做。</p>
+        <p>你以為老人家都晚餐吃飽就回去睡覺，不是，有位爺爺跟我看世界盃 ，法克大戰，看到凌晨一點。有些爺爺奶奶也跟我一樣，半夜才睡，睡到中午才醒，他們的生活也一點都不無聊，很會找事做。<img src="@/../static/emote/1f602.png"><img src="@/../static/emote/1f602.png"><img src="@/../static/emote/1f602.png"></p>
         <p><br></p>
         <p class="hash_tag">爺奶說我穿得很帥</p>
-        <p class="hash_tag">老人家很能接受新事物</p>
+        <p class="hash_tag">老人家很能接受新事物<img class="emoImg" src="@/../static/emote/1f633.png"><img class="emoImg" src="@/../static/emote/1f633.png"><img class="emoImg" src="@/../static/emote/1f633.png"></p>
         <p><br></p>
       </div>
       <div class="lineWrapper forcePaddingZero">
@@ -140,7 +154,21 @@
           </div>
         </div>
         <h4><b>【爺爺奶奶最需要家人的關心】</b></h4>
-        <p><br></p>
+        <p>
+          <img class="emoImg" src="@/../static/emote/2764.png">
+          <img class="emoImg" src="@/../static/emote/2764.png">
+          <img class="emoImg" src="@/../static/emote/2764.png">
+          <img class="emoImg" src="@/../static/emote/2764.png">
+          <img class="emoImg" src="@/../static/emote/2764.png">
+          <img class="emoImg" src="@/../static/emote/2764.png">
+          <img class="emoImg" src="@/../static/emote/2764.png">
+          <img class="emoImg" src="@/../static/emote/2764.png">
+          <img class="emoImg" src="@/../static/emote/2764.png">
+          <img class="emoImg" src="@/../static/emote/2764.png">
+          <img class="emoImg" src="@/../static/emote/2764.png">
+          <img class="emoImg" src="@/../static/emote/2764.png">
+          <img class="emoImg" src="@/../static/emote/2764.png">
+        </p>
         <p>雖然我才搬進陽明老人公寓一個月，但我覺得跟這裡的老人家，比起跟同學、其他大人相處起來關係完全不同。跟爺爺奶奶互動的時候，可以感覺到他們每一個問候都是很真心的。人與人溝通，真誠是最珍貴的，我覺得公寓這裡是很難得的氣氛。</p>
         <p><br></p>
         <p>我很喜歡這裡，回家跟爸媽說「乾脆全家一起搬來」，他們居然也很樂意。很多人覺得住在老人院，好像很悲情，但我來這裡之後發現，老人家其實有很多自己想做的事情，生活得很有目標，住在老人公寓也可以很幸福。</p>
@@ -152,7 +180,7 @@
         <p>住我隔壁的一位奶奶，在我來的第一天就拉著我的手，說她兒子答應她要來教公寓的大家打桌球，奶奶說的時候眼睛裡閃著光芒。但後來有天去拜訪奶奶，問到桌球的事，她說兒子太忙了，只能作罷。我們當時瞬間沉默了20秒，然後奶奶眼眶紅紅地告訴我「對不起」。</p>
         <p><br></p>
         <p class="hash_tag">看了好心疼</p>
-        <p class="hash_tag">我們能做的就是多陪伴</p>
+        <p class="hash_tag">我們能做的就是多陪伴<img class="emoImg" src="@/../static/emote/1f62d.png"><img class="emoImg" src="@/../static/emote/1f62d.png"><img src="@/../static/emote/1f62d.png"></p>
         <p><br></p>
         <p><br></p>
       </div>
@@ -181,6 +209,11 @@
       <p><br></p>
       <Question href="https://www.surveycake.com/s/KpQKN"></Question>
       <p><br></p>
+      <Banner
+        src_1="@/../static/image_0812/img_11.jpg"
+        src_2="@/../static/image_0812/img_12.jpg">
+      </Banner>
+      <p><br></p>
       <Editor>
         <div>文字：蔡佩蓉、章凱閎、游昊耘</div>
         <div>影音：張心慈、王騰毅</div>
@@ -199,6 +232,7 @@
 </template>
 
 <script>
+import Banner from './components/Banner'
 import Cover from './new_comp/Cover'
 import ContentContainer from './new_comp/Content'
 import Chat from './components/Chat'
@@ -218,6 +252,7 @@ import TweenVideo from './components/TweenVideo'
 export default {
   name: 'App',
   components: {
+    Banner,
     Carousel,
     Chat,
     Cover,
@@ -307,12 +342,6 @@ export default {
         {
           id: "img_10",
           img: "@/../static/image_0812/img_10.jpg",
-          info: "和公寓的長輩互動，可以感受到他們真誠的關心，我很珍惜這樣的情感交流。",
-          isActive: false
-        },
-        {
-          id: "img_11",
-          img: "@/../static/image_0812/img_11.jpg",
           info: "和公寓的長輩互動，可以感受到他們真誠的關心，我很珍惜這樣的情感交流。",
           isActive: false
         }
@@ -443,5 +472,8 @@ export default {
 }
 .animated{
   opacity: 0;
+}
+.emoImg{
+  margin-right: 2px;
 }
 </style>

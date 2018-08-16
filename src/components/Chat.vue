@@ -145,7 +145,7 @@ export default {
 }
 .greenbubble{
   position: relative;
-  right: 20%;
+  margin-right: 15%;
   margin-top: 15px;
   border-radius: 35px;
   background-color: #b2ed8b;
@@ -155,7 +155,7 @@ export default {
 }
 .whitebubble{
   position: relative;
-  left: 20%;
+  margin-left: 15%;
   opacity: 0;
   margin-top: 15px;
   border-radius: 35px;

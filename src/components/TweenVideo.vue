@@ -95,17 +95,17 @@ export default {
 }
 .notice{
   animation: volume_notice 888ms alternate infinite ease-out;
-  box-shadow: 0px 0px 50px 15px rgba(255,213,0,1);
+  box-shadow: 0px 0px 20px 5px rgba(255,213,0,1);
 }
 @keyframes volume_notice{
   0%{
-    box-shadow: 0px 0px 50px 15px rgba(255,213,0,1);
+    box-shadow: 0px 0px 20px 5px rgba(255,213,0,1);
   }
   50%{
-    box-shadow: 0px 0px 50px 15px rgba(255,213,0,.5);
+    box-shadow: 0px 0px 20px 5px rgba(255,213,0,.5);
   }
   100%{
-    box-shadow: 0px 0px 50px 15px rgba(255,213,0,.2);
+    box-shadow: 0px 0px 20px 5px rgba(255,213,0,.2);
   }
 }
 </style>

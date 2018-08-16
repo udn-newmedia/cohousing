@@ -51,7 +51,9 @@ export default {
     },
     handle_click (target) {
       $('html, body').animate({scrollTop: $('#' + target).offset().top - 96 + 'px'})
-      this.handle_toggle()
+      if (window.innerWidth < 1025) {
+        this.handle_toggle()
+      }
     },
     handle_scroll () {
       let currentH = window.scrollY
