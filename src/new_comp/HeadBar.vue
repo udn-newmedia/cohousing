@@ -214,7 +214,6 @@ export default {
     }
   },
   mounted () {
-    console.log('res')
     const vm = this
     window.addEventListener('scroll', this.handle_scroll)
     window.addEventListener('resize', this.handle_resize)

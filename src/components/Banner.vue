@@ -8,7 +8,7 @@
       </div>
       <div class="banner-group">
         <div class="banner">
-          <a target="_blank" href="https://vision.udn.com/vision/cate/11885">
+          <a target="_blank" href="https://vision.udn.com/vision/cate/11885" @click="handle_click('願景工程「世代共融」系列報導')">
             <div class="circle-wrapper">
               <img class="img-wrapper" :src="src_1" alt="">
             </div>
@@ -16,7 +16,7 @@
           <a target="_blank" href="https://vision.udn.com/vision/cate/11885">願景工程「世代共融」系列報導</a>
         </div>
         <div class="banner">
-          <a target="_blank" href="https://ubrand.udn.com/ubrand/index">
+          <a target="_blank" href="https://ubrand.udn.com/ubrand/index" @click="handle_click('何用社會創新，促進世代共融？')">
             <div class="circle-wrapper">
               <img class="img-wrapper" :src="src_2" alt="">
             </div>
@@ -30,6 +30,7 @@
 
 <script>
 import _debounce from "lodash.debounce"
+import Utils from 'udn-newmedia-utils'
 export default {
   name: "Banner",
   props: {
@@ -47,12 +48,24 @@ export default {
       windowWidth: global.innerWidth
     }
   },
+  methods: {
+    handle_click (target) {
+      window.ga("send", {
+        "hitType": "event",
+        "eventCategory": "headbar",
+        "eventAction": "click",
+        "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [倡議家Banner點擊]" + " [" + target + "]"
+      })
+    }
+  },
   created () {
     $(window).on(
       "resize",
       _debounce(() => {
         if (this.windowWidth !== global.innerWidth) {
           this.windowWidth = global.innerWidth
+          this.width = $(".article_container")[0].clientWidth + "px"
+          this.distance = "translateX(" + ($(".article_container")[0].clientWidth - $(".article")[0].clientWidth) * -0.5 + "px)"
           this.$forceUpdate()
         }
       }, 200)
@@ -79,6 +92,7 @@ export default {
     justify-content: center;
     align-items: center;
     background-color: #9dd1d5;
+    margin-bottom: 25px;
   }
   .you-know-group {
     display: flex;
@@ -92,6 +106,7 @@ export default {
     background: #ffffff;
   }
   .you-know {
+    flex-shrink: 0;
     font-size: 18px;
     font-weight: bold;
     color: #ffffff;

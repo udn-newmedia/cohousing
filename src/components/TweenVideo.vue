@@ -1,7 +1,7 @@
 <template>
   <div class="TweenVideo">
-    <video :src="src" preload="metadata" playsinline :muted="muted" ref="TheVideo"
-    @click="handle_video_play" @canplay="handle_canplay"></video>
+    <video :src="src" :poster="poster" preload="metadata" autoplay playsinline :muted="muted" ref="TheVideo"
+    @click="handle_video_play" @canplay="handle_canplay" @playing="handle_playing" @ended="handle_ended"></video>
     <div class="volume_box" :class="{'notice': muted}" @click="handle_volume_click">
       <i class="fa fa-2x" :class="{'fa-volume-up': !muted, 'fa-volume-off': muted}" aria-hidden="true"></i>
     </div>
@@ -9,17 +9,23 @@
 </template>
 
 <script>
+import Utils from 'udn-newmedia-utils'
 import { mapActions } from 'vuex'
 export default {
   name: 'TweenVideo',
   props: {
     src: {
       type: String
+    },
+    poster: {
+      type: String
     }
   },
   data () {
     return {
-      muted: true
+      forcePause: false,
+      muted: true,
+      InterVal: null
     }
   },
   methods: {
@@ -30,27 +36,64 @@ export default {
       this.muted === true
         ? this.muted = false
         : this.muted = true
+      window.ga("send", {
+        "hitType": "event",
+        "eventCategory": "headbar",
+        "eventAction": "click",
+        "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [聲音點擊]"
+      })
     },
-    handle_video_play (event) {
-      if (event.target.paused) {
-        event.target.play()
+    handle_video_play () {
+      if (this.$refs.TheVideo.paused) {
+        this.$refs.TheVideo.play()
+        this.forcePause = false
       } else {
-        event.target.pause()
+        this.$refs.TheVideo.pause()
+        this.forcePause = true
+        clearInterval(this.InterVal)
       }
     },
     handle_scroll () {
       let currentH = window.pageYOffset
-      let target = $(this.$el).offset().top - 60
-      if (currentH > target && currentH < target + this.$el.clientHeight) {
+      let target = $(this.$el).offset().top - window.innerHeight * 0.75
+      if (currentH > target && currentH < $(this.$el).offset().top + this.$el.clientHeight && !this.forcePause) {
         this.$refs.TheVideo.play()
       } else {
         this.$refs.TheVideo.pause()
+        clearInterval(this.InterVal)
       }
     },
     handle_canplay () {
       this.addVideoSet()
-      window.addEventListener('scroll', this.handle_scroll)
+    },
+    handle_playing () {
+      window.ga("send", {
+        "hitType": "event",
+        "eventCategory": "headbar",
+        "eventAction": "click",
+        "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [" + this.src + "] " + "[觀看 " + Math.floor(this.$refs.TheVideo.currentTime) + " 秒] [共" + Math.floor(this.$refs.TheVideo.duration) + "秒]"
+      })
+      this.InterVal = setInterval(() => {
+        window.ga("send", {
+          "hitType": "event",
+          "eventCategory": "headbar",
+          "eventAction": "click",
+          "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [" + this.src + "] " + "[觀看 " + Math.floor(this.$refs.TheVideo.currentTime) + " 秒] [共" + Math.floor(this.$refs.TheVideo.duration) + "秒]"
+        })
+      }, 5000)
+    },
+    handle_ended (event) {
+      clearInterval(this.InterVal)
+      window.ga("send", {
+        "hitType": "event",
+        "eventCategory": "headbar",
+        "eventAction": "click",
+        "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [" + this.src + "] " + "[觀看 " + Math.floor(this.$refs.TheVideo.currentTime) + " 秒] [共" + Math.floor(this.$refs.TheVideo.duration) + "秒]"
+      })
     }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handle_scroll)
   }
 }
 </script>
@@ -70,7 +113,6 @@ export default {
   video::-internal-media-controls-download-button {
       display:none;
   }
-
   video::-webkit-media-controls-enclosure {
       overflow:hidden;
   }
@@ -95,17 +137,17 @@ export default {
 }
 .notice{
   animation: volume_notice 888ms alternate infinite ease-out;
-  box-shadow: 0px 0px 20px 5px rgba(255,213,0,1);
+  box-shadow: 0px 0px 20px 5px rgba(#fff,1);
 }
 @keyframes volume_notice{
   0%{
-    box-shadow: 0px 0px 20px 5px rgba(255,213,0,1);
+    box-shadow: 0px 0px 20px 5px rgba(#fff,1);
   }
   50%{
-    box-shadow: 0px 0px 20px 5px rgba(255,213,0,.5);
+    box-shadow: 0px 0px 20px 5px rgba(#fff,.5);
   }
   100%{
-    box-shadow: 0px 0px 20px 5px rgba(255,213,0,.2);
+    box-shadow: 0px 0px 20px 5px rgba(#fff,.2);
   }
 }
 </style>

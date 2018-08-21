@@ -1,6 +1,7 @@
 <template>
   <div class="FixLineList" :class="{'closeLineList': !isListOpen}" :style="{opacity: isOpacity}">
-    <div class="LineList-item" v-for="item in peopleList" :key="item.id" @click="handle_click(item.id)">
+    <div class="mask" :class="{'maskOut': isOpacity}" style="background-image: url('@/../static/image_0812/mask.png')"></div>
+    <div class="LineList-item" v-for="item in peopleList" :key="item.id" @click="handle_click(item.id, item.name)">
       <img :src="item.img" :alt="item.name">
       <p>{{item.name}}</p>
     </div>
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+import Utils from 'udn-newmedia-utils'
 export default {
   name: 'FixLineList',
   data () {
@@ -23,22 +25,22 @@ export default {
         {
           id: 'ppl_1',
           name: '陳玫安',
-          img: '@/../static/image_0812/meian.png'
+          img: '@/../static/image_0812/meian.jpg'
         },
         {
           id: 'ppl_2',
           name: '謝安娜',
-          img: '@/../static/image_0812/anna.png'
+          img: '@/../static/image_0812/anna.jpg'
         },
         {
           id: 'ppl_3',
           name: '王斯特',
-          img: '@/../static/image_0812/sutou.png'
+          img: '@/../static/image_0812/ster.jpg'
         },
         {
           id: 'ppl_4',
           name: '林育甄',
-          img: '@/../static/image_0812/yuchen.png'
+          img: '@/../static/image_0812/yuzen.jpg'
         }
       ]
     }
@@ -49,11 +51,17 @@ export default {
         ? this.isListOpen = false
         : this.isListOpen = true
     },
-    handle_click (target) {
+    handle_click (target, who) {
       $('html, body').animate({scrollTop: $('#' + target).offset().top - 96 + 'px'})
       if (window.innerWidth < 1025) {
         this.handle_toggle()
       }
+      window.ga("send", {
+        "hitType": "event",
+        "eventCategory": "headbar",
+        "eventAction": "click",
+        "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [上方錨點]" + "[" + who + "點擊]"
+      })
     },
     handle_scroll () {
       let currentH = window.scrollY
@@ -98,9 +106,9 @@ export default {
   right: 0;
   overflow: hidden;
   width: 100%;
-  padding: 12.5px 0 25px 0;
+  padding: 12.5px 8px 25px 8px;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   background-color: #fff;
   transition: transform 444ms;
   @media screen and (min-width: 1025px) {
@@ -115,7 +123,23 @@ export default {
     padding: 0;
     transition: opacity 888ms;
     transform: translate(200%, 0);
+    border-top: solid 1px #e6e6e6;
+    padding-top: 20px;
   }
+}
+.mask{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: 100% auto;;
+  background-repeat: repeat;
+  pointer-events: none;
+  transition: transform 444ms;
+}
+.maskOut{
+  transform: translate(0, 100%);
 }
 .toggle-btn{
   position: absolute;
@@ -128,9 +152,13 @@ export default {
     display: none;
   }
 }
+.fa-chevron-up{
+  color: #aaa9a9;
+}
 .LineList-item{
   height: 75px;
   border-radius: 50%;
+  margin-right: 12px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -143,6 +171,7 @@ export default {
     }
   }
   img{
+    border-radius: 50%;
     width: 55px;
     height: 55px;
   }

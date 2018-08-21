@@ -6,18 +6,19 @@
     <Indicator></Indicator>
     <Headbar>
       <a slot="logo" href="https://vision.udn.com/"><img class="other_logo" src="../static/visual-logo.png" alt="聯合報願景工程"></a>
-      <a href="#"><b>我和我的高齡室友</b></a>
-      <a href="#">德國多代共居</a>
-      <a href="#">世代共融系列報導</a>
+      <a href="./index.html"><b>我和我的高齡室友</b></a>
+      <a href="./germany/index.html">德國多代共居</a>
+      <a href="https://vision.udn.com/vision/cate/11885">世代共融系列報導</a>
     </Headbar>
     <Cover class="cus_cover_bg" src="@/../static/image_0812/cover_m.jpg" srcWeb="@/../static/image_0812/cover_pc.jpg"
-    useArrow="yes" useHint="yes" arrow-color="#fff">
-      <h1 class="cus_cover_title">「我和我的高齡室友」<br>跨世代共居如何迸出奇異火花</h1>
+    useArrow="yes" useHint="yes" arrow-color="#fff" position="centerBottom">
+      <h1 class="cus_cover_title">「我和我的高齡室友」</h1>
+      <h2 class="cus_cover_title">跨世代共居如何迸出奇異火花</h2>
     </Cover>
     <ContentContainer>
       <Share href="https://udn.com/upf/newmedia/2018_data/cohousing/index.html"></Share>
       <p><br></p>
-      <div ref="introSec" class="animated" :class="{'fadeInUp': introShow}">
+      <div ref="introSec" class="animated" :class="{'cusfadeInUp': introShow}">
         <p>今年3月，台北市陽明老人公寓推動「青銀共居」實驗，仿照荷蘭安養院「以工換宿」計劃，開放8名文化大學學生入住，每個月只要陪伴老年人下棋、唱歌、教導3C等，完成20小時服務時數，即可以3000元入住獨立套房。希望促進跨世代經驗交流，營造共融生活。</p>
         <p><br></p>
         <p>聯合報系《願景工程》團隊走進陽明老人公寓，紀錄兩代之間的混齡共居生活，相差5、60歲的「鄰居朋友」相處起來會擦出什麼火花？並從他們真實的社群聊天對話中，看不同世代如何透過3C科技、社群網路交流，一窺他們日常中最真誠自然的互動。</p>
@@ -30,7 +31,7 @@
       <div id="linePaper" class="lineWrapper">
         <div class="lineHead" id="ppl_1">
           <div class="line_profile">
-            <img src="../static/image_0812/meian.png" alt="陳玫安">
+            <img src="../static/image_0812/meian.jpg" alt="陳玫安">
           </div>
           <div class="line_title">
             <h4>陳玟安 文化大學心輔系三年級</h4>
@@ -38,7 +39,7 @@
           </div>
         </div>
         <p><br></p>
-        <h4><b>【用Line揪爺爺奶奶出來玩】</b><img src="@/../static/emote/1f609.png"></h4>
+        <h4 class="vertical"><b>【用Line揪爺爺奶奶出來玩】</b><img class="emoImg" src="@/../static/emote/1f609.png"></h4>
         <p><br></p>
         <p>會想申請青銀共居，是因為我很喜歡跟老年人相處。我跟自己的阿公阿嬤感情很好，但是跟公寓的爺爺奶奶相處又是不同感覺，畢竟不是家人，剛開始會有距離感。但透過平常吃飯、活動時，多去打招呼，爺爺奶奶認識你之後，就會開始關心你。其實跟長輩建立關係不難，只是需要時間。</p>
         <p><br></p>
@@ -52,18 +53,18 @@
         <p><br></p>
         <p>我覺得老人家最需要的是耐心陪伴，他們很期盼我們不時地出現。有時候下課回來，爺爺奶奶會說「很久沒看到妳」，但其實我們昨天才見過面。聽到時感覺心裡有點酸，會想起自己的阿公阿嬤，平常沒有機會這麼頻繁接觸，他們一定也很想我吧。</p>
         <p><br></p>
-        <p class="hash_tag">爺爺奶奶留門縫代表歡迎拜訪<img src="@/../static/emote/2763.png"></p>
+        <p class="hash_tag vertical" style="align-items: baseline">爺爺奶奶留門縫代表歡迎拜訪<img class="emoImg" src="@/../static/emote/2763.png"></p>
         <p class="hash_tag">跟長輩之間的小默契</p>
         <p><br></p>
       </div>
       <div class="lineWrapper forcePaddingZero">
-        <TweenVideo :src="TweenVideoSrc[0]"></TweenVideo>
+        <TweenVideo :src="TweenVideoSrc[0]" poster="@/../static/video_0812/poster_1.jpg"></TweenVideo>
       </div>
       <div class="lineWrapper">
         <p><br></p>
         <div class="lineHead" id="ppl_2">
           <div class="line_profile">
-            <img src="../static/image_0812/anna.png" alt="謝安娜">
+            <img src="../static/image_0812/anna.jpg" alt="謝安娜">
           </div>
           <div class="line_title">
             <h4>謝安娜 陽明老人公寓長輩</h4>
@@ -71,7 +72,10 @@
           </div>
         </div>
         <p><br></p>
-        <h4><img class="emoImg" src="@/../static/emote/1f44d.png"><img src="@/../static/emote/1f44d.png"><img src="@/../static/emote/1f44d.png"><b>【我給每個孩子一顆彩蛋】</b></h4>
+        <h4 class="vertical">
+          <img src="@/../static/emote/1f44d.png">
+          <img src="@/../static/emote/1f44d.png">
+          <img src="@/../static/emote/1f44d.png"><b>【我給每個孩子一顆彩蛋】</b></h4>
         <p><br></p>
         <p>青銀共居對我來說不是一件新鮮的事。我年輕時在文化大學當行政人員，是天主教弘道社指導老師，所以我跟年輕人的關係一直沒有斷。當時社團學生，來我家當我孩子的家教，我知道他們很多人念書很苦，每次一來我都煮大鍋菜，看他們吃飽，我也覺得很幸福。</p>
         <p><br></p>
@@ -85,19 +89,19 @@
         <p><br></p>
         <p>住在這裡的每個孩子，我都給他們一顆蛋，他們都放在房間裡。雖然我的腿已經不好使，但我希望我還可以用，我想要自己能夠被用。</p>
         <p><br></p>
-        <p class="hash_tag">每一顆蛋都是祝福<img class="emoImg" src="@/../static/emote/1f60d.png"><img class="emoImg" src="@/../static/emote/1f60d.png"><img src="@/../static/emote/1f60d.png"></p>
+        <p class="hash_tag vertical">每一顆蛋都是祝福<img class="emoImg" src="@/../static/emote/1f60d.png"><img class="emoImg" src="@/../static/emote/1f60d.png"><img src="@/../static/emote/1f60d.png"></p>
         <p class="hash_tag">分享快樂是抗老的最好方法</p>
         <p><br></p>
         <p><br></p>
       </div>
       <div class="lineWrapper forcePaddingZero">
-        <TweenVideo :src="TweenVideoSrc[1]"></TweenVideo>
+        <TweenVideo :src="TweenVideoSrc[1]" poster="@/../static/video_0812/poster_2.jpg"></TweenVideo>
       </div>
       <div class="lineWrapper">
         <p><br></p>
         <div class="lineHead" id="ppl_3">
           <div class="line_profile">
-            <img src="../static/image_0812/sutou.png" alt="王斯特">
+            <img src="../static/image_0812/ster.jpg" alt="王斯特">
           </div>
           <div class="line_title">
             <h4>王斯特 文化大學政治系三年級</h4>
@@ -105,7 +109,7 @@
           </div>
         </div>
         <p><br></p>
-        <h4><b>【老人家不是都一個樣子】</b><img class="emoImg" src="@/../static/emote/1f601.png"><img class="emoImg" src="@/../static/emote/1f601.png"><img class="emoImg" src="@/../static/emote/1f601.png"><img class="emoImg" src="@/../static/emote/1f601.png"><img src="@/../static/emote/1f601.png"></h4>
+        <h4 class="vertical"><b>【老人家不是都一個樣子】</b><img class="emoImg" src="@/../static/emote/1f601.png"><img class="emoImg" src="@/../static/emote/1f601.png"><img class="emoImg" src="@/../static/emote/1f601.png"><img class="emoImg" src="@/../static/emote/1f601.png"><img src="@/../static/emote/1f601.png"></h4>
         <p><br></p>
         <p>住進陽明老人公寓已經五個月了，一開始會想申請，是因為覺得這裡CP值很高，一個月3000元，同學都羨慕，同樣規格在外面租房子，大概要一萬塊吧。</p>
         <p><br></p>
@@ -136,17 +140,17 @@
         <p>你以為老人家都晚餐吃飽就回去睡覺，不是，有位爺爺跟我看世界盃 ，法克大戰，看到凌晨一點。有些爺爺奶奶也跟我一樣，半夜才睡，睡到中午才醒，他們的生活也一點都不無聊，很會找事做。<img src="@/../static/emote/1f602.png"><img src="@/../static/emote/1f602.png"><img src="@/../static/emote/1f602.png"></p>
         <p><br></p>
         <p class="hash_tag">爺奶說我穿得很帥</p>
-        <p class="hash_tag">老人家很能接受新事物<img class="emoImg" src="@/../static/emote/1f633.png"><img class="emoImg" src="@/../static/emote/1f633.png"><img class="emoImg" src="@/../static/emote/1f633.png"></p>
+        <p class="hash_tag vertical">老人家很能接受新事物<img class="emoImg" src="@/../static/emote/1f633.png"><img class="emoImg" src="@/../static/emote/1f633.png"><img class="emoImg" src="@/../static/emote/1f633.png"></p>
         <p><br></p>
       </div>
       <div class="lineWrapper forcePaddingZero">
-        <TweenVideo :src="TweenVideoSrc[2]"></TweenVideo>
+        <TweenVideo :src="TweenVideoSrc[2]" poster="@/../static/video_0812/poster_3.jpg"></TweenVideo>
       </div>
       <div class="lineWrapper">
         <p><br></p>
         <div class="lineHead" id="ppl_4">
           <div class="line_profile">
-            <img src="../static/image_0812/yuchen.png" alt="林育甄">
+            <img src="../static/image_0812/yuzen.jpg" alt="林育甄">
           </div>
           <div class="line_title">
             <h4>林育甄 文化大學心輔系三年級</h4>
@@ -185,7 +189,7 @@
         <p><br></p>
       </div>
       <div class="lineWrapper forcePaddingZero">
-        <TweenVideo :src="TweenVideoSrc[3]"></TweenVideo>
+        <TweenVideo :src="TweenVideoSrc[3]" poster="@/../static/video_0812/poster_4.jpg"></TweenVideo>
       </div>
       <div class="lineWrapper gickBg">
         <ReadEnd></ReadEnd>
@@ -197,22 +201,26 @@
         <p>同住在一個屋簷下的長輩和年輕人，抽離血緣關係，與其說像家人，更像是「鄰居以上，家人未滿」的關係，平常有各自的生活空間，又能不時互相關照陪伴。</p>
         <p><br></p>
         <p>老人公寓走廊上迴盪著年輕笑聲，為長者的生活增添幾許活力與溫暖，更讓我們看見血緣之外，不同世代也可以有很美好的互動。</p>
+        <p><br></p>
+        <Share href="https://udn.com/upf/newmedia/2018_data/cohousing/index.html"></Share>
       </div>
     </ContentContainer>
-    <ContentContainer style="background-color: #fff">
-      <Share href="https://udn.com/upf/newmedia/2018_data/cohousing/index.html"></Share>
-      <Logo>
-        <div class="logo">
-          <a href="https://vision.udn.com/" target="_blank"><img src="https://udn.com/upf/newmedia/img/logo_udnhope2.jpg"></a>
-        </div>
-      </Logo>
-      <p><br></p>
+    <ContentContainer style="background-color: #f0f2f2">
       <Question href="https://www.surveycake.com/s/KpQKN"></Question>
+      <p><br></p>
       <p><br></p>
       <Banner
         src_1="@/../static/image_0812/img_11.jpg"
         src_2="@/../static/image_0812/img_12.jpg">
       </Banner>
+      <p><br></p>
+    </ContentContainer>
+    <ContentContainer style="background-color: #fff">
+      <Logo style="width: 100%;">
+        <div class="logo">
+          <a href="https://vision.udn.com/" target="_blank"><img src="https://udn.com/upf/newmedia/img/logo_udnhope2.jpg"></a>
+        </div>
+      </Logo>
       <p><br></p>
       <Editor>
         <div>文字：蔡佩蓉、章凱閎、游昊耘</div>
@@ -228,6 +236,7 @@
       <p><br></p>
       <FbComment href="https://udn.com/upf/newmedia/2018_data/cohousing/index.html"></FbComment>
     </ContentContainer>
+    <Foot></Foot>
   </div>
 </template>
 
@@ -238,6 +247,7 @@ import ContentContainer from './new_comp/Content'
 import Chat from './components/Chat'
 import Carousel from './components/Carousel'
 import Editor from './new_comp/Editor'
+import Foot from './new_comp/Foot'
 import FbComment from './new_comp/FBComment'
 import FixLineList from './components/FixLineList'
 import Headbar from './new_comp/HeadBar'
@@ -260,6 +270,7 @@ export default {
     Editor,
     FbComment,
     FixLineList,
+    Foot,
     Headbar,
     Logo,
     Question,
@@ -273,10 +284,10 @@ export default {
     return {
       introShow: false,
       TweenVideoSrc: [
-        '@/../static/video_0812/video_1.mp4',
-        '@/../static/video_0812/video_2.mp4',
-        '@/../static/video_0812/video_3.mp4',
-        '@/../static/video_0812/video_4.mp4'
+        '@/../static/video_0812/video_1.mp4?v=20180821',
+        '@/../static/video_0812/video_2.mp4?v=20180821',
+        '@/../static/video_0812/video_3.mp4?v=20180821',
+        '@/../static/video_0812/video_4.mp4?v=20180821'
       ],
       MeiAnCarouselMenu: [
         {
@@ -288,13 +299,13 @@ export default {
         {
           id: "img_2",
           img: "@/../static/image_0812/img_2.jpg",
-          info: "我和室友育甄常到安娜奶奶的房間閒聊、吃點心，奶奶說，跟年輕人聊天最開心了。",
+          info: "100歲的陳端和爺爺，在陽明老人公寓已經住了20年，他最大的興趣是寫書法。",
           isActive: false
         },
         {
           id: "img_3",
           img: "@/../static/image_0812/img_3.jpg",
-          info: "100歲的陳端和爺爺，在陽明老人公寓已經住了20年。他最大的興趣是寫書法，牆上掛的就是他的作品。",
+          info: "陳端和爺爺的房間裡，掛著他親筆寫的書法作品。",
           isActive: false
         }
       ],
@@ -367,7 +378,6 @@ export default {
     handle_scroll (target) {
       let currentH = window.pageYOffset
       if ((currentH > $(this.$refs.introSec).offset().top - window.innerHeight * 0.8) && !this.introShow) {
-        console.log('true it')
         this.introShow = true
       }
     }
@@ -379,13 +389,48 @@ export default {
 </script>
 
 <style lang="scss">
+.cusfadeInUp{
+  animation-name: cusFade;
+}
+@keyframes cusFade {
+  0% {
+    opacity: 0;
+    transform: translate(0, 2em);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+.vertical{
+  display: flex;
+  align-items: baseline;
+  img{
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    margin-left: 8px;
+  }
+}
+.emoImg{
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+}
+.animated{
+  animation-duration: 2s !important;
+  animation-timing-function: cubic-bezier(.23,1,.32,1) !important;
+}
 .cus_cover_bg{
   background-position: top center !important;
-  padding-bottom: 5% !important;
 }
 .cus_cover_title{
-  padding: 10px;
-  background-color: #f0f2f2;
+  // transform: translate(0, 12vh);
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  // background-color: #f0f2f2;
+  color: #fff;
 }
 .timeline{
   position: fixed;
@@ -410,6 +455,9 @@ export default {
   width: 100%;
   padding: 20px 15px;
   background-color: #fff;
+  p{
+    font-size: 18px;
+  }
   p:last-child{
     margin-bottom: 0;
   }
@@ -426,13 +474,13 @@ export default {
 .line_profile{
   width: 70px;
   height: 70px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 10px;
   img{
     width: 80%;
+    border-radius: 50%;
   }
 }
 .line_title{
@@ -445,13 +493,14 @@ export default {
     letter-spacing: 0.6px;
     text-align: left;
     color: #7b7b7b;
-    line-height: 2.67;
+    line-height: 1;
   }
 }
 .hash_tag{
   color: #365899;
   font-size: 16px;
   line-height: 1.75;
+  margin: 0;
   &::before{
     content: '#'
   }
@@ -472,8 +521,5 @@ export default {
 }
 .animated{
   opacity: 0;
-}
-.emoImg{
-  margin-right: 2px;
 }
 </style>

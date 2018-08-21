@@ -84,7 +84,7 @@ export default {
   width: 100%;
   height: 100vh;
   display: flex;
-  padding: 28.8888% 7.7777%;
+  padding: 28.8888% 0;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

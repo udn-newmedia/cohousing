@@ -1,11 +1,12 @@
 <template>
-  <a target="_blank" :href="setProps('href')">
+  <a target="_blank" :href="setProps('href')" @click="handle_click">
     <div class="question-button">{{setProps('text')}}</div>
   </a>
 </template>
 
 <script>
 import setProps from '../mixin/setProps.js'
+import Utils from 'udn-newmedia-utils'
 export default {
   name: 'Question',
   mixins: [setProps],
@@ -20,6 +21,16 @@ export default {
     text: {
       type: String,
       default: '請填寫閱讀體驗問卷'
+    }
+  },
+  methods: {
+    handle_click () {
+      window.ga("send", {
+        "hitType": "event",
+        "eventCategory": "headbar",
+        "eventAction": "click",
+        "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [點擊問卷]"
+      })
     }
   }
 }

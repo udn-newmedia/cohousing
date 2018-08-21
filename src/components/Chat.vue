@@ -3,23 +3,27 @@
     <div class="line_chatcontent">
       <div class="compare" ref="compare">
         <div class="compare-item animated" :class="{'fadeInLeft': showCompare}">
-          <img src="../../static/image_0812/meian.png" alt="陳玫安">
+          <img src="../../static/image_0812/meian.jpg" alt="陳玫安">
           <p style="margin-top: 10px;">陳玟安 20歲</p>
-          <span>文化大學心輔系三年級<br/>入住陽明老人公寓3個月</span>
+          <span>文化大學心輔系三年級<br/>入住陽明老人公寓5個月</span>
         </div>
         <div class="compare-item animated" :class="{'fadeInRight': showCompare}">
-          <img src="../../static/image_0812/anna.png" alt="謝安娜">
+          <img src="../../static/image_0812/anna.jpg" alt="謝安娜">
           <p style="margin-top: 10px;">謝安娜 72歲</p>
           <span>入住陽明老人公寓3年</span>
         </div>
       </div>
       <span class="chatTime animated" ref="chatTime" :class="{'fadeInUp': showChatTime}">2018.07.09</span>
-      <span class="greenbubble animated" ref="bubble_1" :class="{'fadeInLeft': showChat_1}">明天晚上玩桌遊唷</span>
-      <span class="greenbubble animated" ref="bubble_2" :class="{'fadeInLeft': showChat_2}">奶奶要來玩嗎？</span>
-      <span class="whitebubble animated" ref="bubble_3" :class="{'fadeInRight': showChat_3}">不是今天嗎？</span>
-      <span class="greenbubble animated" ref="bubble_4" :class="{'fadeInLeft': showChat_4}">七點</span>
-      <span class="whitebubble animated" ref="bubble_5" :class="{'fadeInRight': showChat_5}">好的我會來</span>
-      <span class="greenbubble animated" ref="bubble_6" :class="{'fadeInLeft': showChat_6}">太好了！非常歡迎</span>
+      <span class="greenbubble animated" ref="bubble_1" :class="{'fadeInUp': showChat_1}">明天晚上玩桌遊唷</span>
+      <span class="greenbubble animated" ref="bubble_2" :class="{'fadeInUp': showChat_2}">奶奶要來玩嗎？</span>
+      <span class="whitebubble animated" ref="bubble_3" :class="{'fadeInUp': showChat_3}">不是今天嗎？</span>
+      <span class="greenbubble animated" ref="bubble_4" :class="{'fadeInUp': showChat_4}">最後決定是明天了！</span>
+      <span class="greenbubble animated" ref="bubble_5" :class="{'fadeInUp': showChat_5}">昨天還不確定時間</span>
+      <span class="greenbubble animated" ref="bubble_6" :class="{'fadeInUp': showChat_6}">412張爺爺提供3種桌遊</span>
+      <span class="whitebubble animated" ref="bubble_7" :class="{'fadeInUp': showChat_7}">明晚幾點？</span>
+      <span class="greenbubble animated" ref="bubble_8" :class="{'fadeInUp': showChat_8}">七點</span>
+      <span class="whitebubble animated" ref="bubble_9" :class="{'fadeInUp': showChat_9}">好的我會來</span>
+      <span class="greenbubble animated" ref="bubble_10" :class="{'fadeInUp': showChat_10}">太好了！非常歡迎</span>
     </div>
   </div>
 </template>
@@ -36,37 +40,54 @@ export default {
       showChat_3: false,
       showChat_4: false,
       showChat_5: false,
-      showChat_6: false
+      showChat_6: false,
+      showChat_7: false,
+      showChat_8: false,
+      showChat_9: false,
+      showChat_10: false
     }
   },
   methods: {
     handle_scroll () {
       let currentH = window.scrollY
       const wH = window.innerHeight
+      const ddd = 0.75
       switch (true) {
-        case currentH > $(this.$refs.compare).offset().top - (wH * 0.8) && !this.showCompare:
+        case currentH > $(this.$refs.compare).offset().top - (wH * ddd) && !this.showCompare:
           this.showCompare = true
           break
-        case currentH > $(this.$refs.chatTime).offset().top - (wH * 0.8) && !this.showChatTime:
+        case currentH > $(this.$refs.chatTime).offset().top - (wH * ddd) && !this.showChatTime:
           this.showChatTime = true
           break
-        case currentH > $(this.$refs.bubble_1).offset().top - (wH * 0.8) && !this.showChat_1:
+        case currentH > $(this.$refs.bubble_1).offset().top - (wH * ddd) && !this.showChat_1:
           this.showChat_1 = true
           break
-        case currentH > $(this.$refs.bubble_2).offset().top - (wH * 0.8) && !this.showChat_2:
+        case currentH > $(this.$refs.bubble_2).offset().top - (wH * ddd) && !this.showChat_2:
           this.showChat_2 = true
           break
-        case currentH > $(this.$refs.bubble_3).offset().top - (wH * 0.8) && !this.showChat_3:
+        case currentH > $(this.$refs.bubble_3).offset().top - (wH * ddd) && !this.showChat_3:
           this.showChat_3 = true
           break
-        case currentH > $(this.$refs.bubble_4).offset().top - (wH * 0.8) && !this.showChat_4:
+        case currentH > $(this.$refs.bubble_4).offset().top - (wH * ddd) && !this.showChat_4:
           this.showChat_4 = true
           break
-        case currentH > $(this.$refs.bubble_5).offset().top - (wH * 0.8) && !this.showChat_5:
+        case currentH > $(this.$refs.bubble_5).offset().top - (wH * ddd) && !this.showChat_5:
           this.showChat_5 = true
           break
-        case currentH > $(this.$refs.bubble_6).offset().top - (wH * 0.8) && !this.showChat_6:
+        case currentH > $(this.$refs.bubble_6).offset().top - (wH * ddd) && !this.showChat_6:
           this.showChat_6 = true
+          break
+        case currentH > $(this.$refs.bubble_7).offset().top - (wH * ddd) && !this.showChat_7:
+          this.showChat_7 = true
+          break
+        case currentH > $(this.$refs.bubble_8).offset().top - (wH * ddd) && !this.showChat_8:
+          this.showChat_8 = true
+          break
+        case currentH > $(this.$refs.bubble_9).offset().top - (wH * ddd) && !this.showChat_9:
+          this.showChat_9 = true
+          break
+        case currentH > $(this.$refs.bubble_10).offset().top - (wH * ddd) && !this.showChat_10:
+          this.showChat_10 = true
       }
     }
   },
@@ -77,6 +98,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.animated{
+  animation-duration: 2s !important;
+  animation-timing-function: cubic-bezier(.23,1,.32,1) !important;
+}
 .lineSection{
   position: relative;
   z-index: 30;
