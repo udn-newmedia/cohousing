@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     handle_scroll () {
-      let currentH = window.scrollY
+      let currentH = window.pageYOffset
       const wH = window.innerHeight
       const ddd = 0.75
       switch (true) {

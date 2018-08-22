@@ -7,8 +7,8 @@
     <Headbar>
       <a slot="logo" href="https://vision.udn.com/"><img class="other_logo" src="../static/visual-logo.png" alt="聯合報願景工程"></a>
       <a href="./index.html"><b>我和我的高齡室友</b></a>
-      <a href="./germany/index.html">德國多代共居</a>
-      <a href="https://vision.udn.com/vision/cate/11885">世代共融系列報導</a>
+      <a target="_blank" href="./germany/index.html">德國多代共居</a>
+      <a target="_blank" href="https://vision.udn.com/vision/cate/11885">世代共融系列報導</a>
     </Headbar>
     <Cover class="cus_cover_bg" src="@/../static/image_0812/cover_m.jpg" srcWeb="@/../static/image_0812/cover_pc.jpg"
     useArrow="yes" useHint="yes" arrow-color="#fff" position="centerBottom">
@@ -203,19 +203,18 @@
         <p>老人公寓走廊上迴盪著年輕笑聲，為長者的生活增添幾許活力與溫暖，更讓我們看見血緣之外，不同世代也可以有很美好的互動。</p>
         <p><br></p>
         <Share href="https://udn.com/upf/newmedia/2018_data/cohousing/index.html"></Share>
+        <p><br></p>
       </div>
     </ContentContainer>
-    <ContentContainer style="background-color: #f0f2f2">
+    <ContentContainer class="cusBgc">
       <Question href="https://www.surveycake.com/s/KpQKN"></Question>
-      <p><br></p>
-      <p><br></p>
+    </ContentContainer>
+    <ContentContainer style="background-color: #fff;padding-top: 0;">
       <Banner
         src_1="@/../static/image_0812/img_11.jpg"
         src_2="@/../static/image_0812/img_12.jpg">
       </Banner>
       <p><br></p>
-    </ContentContainer>
-    <ContentContainer style="background-color: #fff">
       <Logo style="width: 100%;">
         <div class="logo">
           <a href="https://vision.udn.com/" target="_blank"><img src="https://udn.com/upf/newmedia/img/logo_udnhope2.jpg"></a>
@@ -389,8 +388,17 @@ export default {
 </script>
 
 <style lang="scss">
+#app{
+  width: 100%;
+}
 .cusfadeInUp{
   animation-name: cusFade;
+}
+.cusBgc{
+  background-color: #fff !important;
+  @media screen and (min-width: 1025px) {
+    background-color: #f0f2f2 !important;
+  }
 }
 @keyframes cusFade {
   0% {

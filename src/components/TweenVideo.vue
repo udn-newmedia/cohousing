@@ -1,8 +1,10 @@
 <template>
   <div class="TweenVideo">
-    <video :src="src" :poster="poster" preload="metadata" autoplay playsinline :muted="muted" ref="TheVideo"
-    @click="handle_video_play" @canplay="handle_canplay" @playing="handle_playing" @ended="handle_ended"></video>
-    <div class="volume_box" :class="{'notice': muted}" @click="handle_volume_click">
+    <div class="videoWrapper">
+      <video :src="src" :poster="poster" preload="metadata" autoplay playsinline :muted="muted" ref="TheVideo"
+      @click="handle_video_play" @canplay="handle_canplay" @playing="handle_playing" @ended="handle_ended"></video>
+    </div>
+    <div class="volume_box" :class="{'notice': muted}" @click.stop="handle_volume_click">
       <i class="fa fa-2x" :class="{'fa-volume-up': !muted, 'fa-volume-off': muted}" aria-hidden="true"></i>
     </div>
   </div>
@@ -33,9 +35,12 @@ export default {
       'addVideoSet'
     ]),
     handle_volume_click () {
-      this.muted === true
-        ? this.muted = false
-        : this.muted = true
+      if (this.muted) {
+        this.muted = false
+        this.$refs.TheVideo.play()
+      } else {
+        this.muted = true
+      }
       window.ga("send", {
         "hitType": "event",
         "eventCategory": "headbar",
@@ -107,6 +112,11 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.videoWrapper{
+  position: relative;
+  z-index: 50;
+  width: 100%;
   video{
     width: 100%;
   }

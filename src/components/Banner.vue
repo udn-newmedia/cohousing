@@ -86,6 +86,7 @@ export default {
     color: #ffffff;
   }
   .banner-wrapper {
+    width: 100%;
     padding: 100px;
     display: flex;
     flex-direction: column;

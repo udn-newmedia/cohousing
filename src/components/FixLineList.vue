@@ -24,7 +24,7 @@ export default {
       peopleList: [
         {
           id: 'ppl_1',
-          name: '陳玫安',
+          name: '陳玟安',
           img: '@/../static/image_0812/meian.jpg'
         },
         {
@@ -64,7 +64,7 @@ export default {
       })
     },
     handle_scroll () {
-      let currentH = window.scrollY
+      let currentH = window.pageYOffset
       if (window.innerWidth < 1025) {
         switch (true) {
           case currentH > $('#linePaper').offset().top && !this.hasShow:
@@ -79,7 +79,7 @@ export default {
             this.isOpacity = 0
         }
       } else {
-        if (currentH > $('#linePaper').offset().top - 120) {
+        if (currentH > $('#linePaper').offset().top - 120 && currentH < $('.ReadEnd').eq(0).offset().top) {
           this.isOpacity = 1
         } else {
           this.isOpacity = 0
@@ -129,13 +129,13 @@ export default {
 }
 .mask{
   position: absolute;
+  z-index: 100;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-size: 100% auto;;
   background-repeat: repeat;
-  pointer-events: none;
   transition: transform 444ms;
 }
 .maskOut{
