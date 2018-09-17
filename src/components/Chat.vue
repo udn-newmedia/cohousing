@@ -148,6 +148,13 @@ export default {
     border-radius: 50%;
     overflow: hidden;
   }
+  span{
+    padding: 0 8px;
+    font-size: 14px;
+    @media screen and (max-width: 374px) {
+      font-size: 13px;
+    }
+  }
 }
 .chatTime{
   opacity: 0;

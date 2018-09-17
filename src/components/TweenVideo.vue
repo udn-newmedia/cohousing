@@ -140,7 +140,7 @@ export default {
   background-color: rgba(#000, .7);
   position: absolute;
   z-index: 100;
-  left: 15px;
+  right: 15px;
   bottom: 15px;
   color: #fff;
   cursor: pointer;

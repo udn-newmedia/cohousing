@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     handle_scroll: function () {
-      let currentH = window.scrollY
+      let currentH = window.pageYOffset
       if (currentH > $('.ReadEnd').offset().top - window.innerHeight * 0.9) {
         this.isChecked = true
       }

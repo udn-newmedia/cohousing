@@ -211,8 +211,8 @@
     </ContentContainer>
     <ContentContainer style="background-color: #fff;padding-top: 0;">
       <Banner
-        src_1="@/../static/image_0812/img_11.jpg"
-        src_2="@/../static/image_0812/img_12.jpg">
+        src_1="@/../static/image_0812/img_11.jpg?v=20180824"
+        src_2="@/../static/image_0812/img_12.jpg?v=20180824">
       </Banner>
       <p><br></p>
       <Logo style="width: 100%;">
@@ -291,19 +291,19 @@ export default {
       MeiAnCarouselMenu: [
         {
           id: "img_1",
-          img: "@/../static/image_0812/img_1.jpg",
-          info: "我和室友育甄常到安娜奶奶的房間閒聊、吃點心，奶奶說，跟年輕人聊天最開心了。",
+          img: "@/../static/image_0812/img_1.jpg?v=20180824",
+          info: "到安娜奶奶的房間閒聊、吃點心，奶奶說，跟年輕人聊天最開心了。",
           isActive: true
         },
         {
           id: "img_2",
-          img: "@/../static/image_0812/img_2.jpg",
+          img: "@/../static/image_0812/img_2.jpg?v=20180824",
           info: "100歲的陳端和爺爺，在陽明老人公寓已經住了20年，他最大的興趣是寫書法。",
           isActive: false
         },
         {
           id: "img_3",
-          img: "@/../static/image_0812/img_3.jpg",
+          img: "@/../static/image_0812/img_3.jpg?v=20180824",
           info: "陳端和爺爺的房間裡，掛著他親筆寫的書法作品。",
           isActive: false
         }
@@ -311,13 +311,13 @@ export default {
       AnnaCarouselMenu: [
         {
           id: "img_4",
-          img: "@/../static/image_0812/img_4.jpg",
+          img: "@/../static/image_0812/img_4.jpg?v=20180824",
           info: "已經有兩年的復活節，我教大家做彩蛋，蛋很可愛，彩色蛋尤其漂亮，每個人都喜歡。",
           isActive: true
         },
         {
           id: "img_5",
-          img: "@/../static/image_0812/img_5.jpg",
+          img: "@/../static/image_0812/img_5.jpg?v=20180824",
           info: "兩個月前，莉君剛畢業，她穿著學士服來跟我道別。和她相聚時間短暫，到現在心裡還是很捨不得她。圖／劉莉君提供",
           isActive: false
         }
@@ -325,19 +325,19 @@ export default {
       SterCarouselMenu: [
         {
           id: "img_6",
-          img: "@/../static/image_0812/img_6.jpg",
+          img: "@/../static/image_0812/img_6.jpg?v=20180824",
           info: "我們每個月必須完成20小時的服務時數，陪爺爺奶奶打麻將、玩桌遊等。圖／陽明老人公寓提供",
           isActive: true
         },
         {
           id: "img_7",
-          img: "@/../static/image_0812/img_7.jpg",
+          img: "@/../static/image_0812/img_7.jpg?v=20180824",
           info: "我們每個月必須完成20小時的服務時數，陪爺爺奶奶打麻將、玩桌遊等。圖／陽明老人公寓提供",
           isActive: false
         },
         {
           id: "img_8",
-          img: "@/../static/image_0812/img_8.jpg",
+          img: "@/../static/image_0812/img_8.jpg?v=20180824",
           info: "我試著將20小時的陪伴服務轉化成一種反射動作，跟長輩由心出發的交流。",
           isActive: false
         }
@@ -345,13 +345,13 @@ export default {
       YuiChenCarouselMenu: [
         {
           id: "img_9",
-          img: "@/../static/image_0812/img_9.jpg",
+          img: "@/../static/image_0812/img_9.jpg?v=20180824",
           info: "和公寓的長輩互動，可以感受到他們真誠的關心，我很珍惜這樣的情感交流。",
           isActive: true
         },
         {
           id: "img_10",
-          img: "@/../static/image_0812/img_10.jpg",
+          img: "@/../static/image_0812/img_10.jpg?v=20180824",
           info: "和公寓的長輩互動，可以感受到他們真誠的關心，我很珍惜這樣的情感交流。",
           isActive: false
         }
@@ -363,7 +363,7 @@ export default {
         img1: '@/../static/image_0812/read1.jpg',
         href2: 'https://vision.udn.com/vision/story/12184/3250141',
         text2: '聽銀髮族搖滾說故事 「搖滾爺奶」開啟對老年的想像',
-        img2: '@/../static/image_0812/read2.jpg',
+        img2: '@/../static/image_0812/read2.jpg?v=20180824',
         href3: 'https://vision.udn.com/vision/story/12329/3240424',
         text3: '當兩代理髮師相遇 老師傅頂上功夫他看得入迷',
         img3: '@/../static/image_0812/read3.jpg',

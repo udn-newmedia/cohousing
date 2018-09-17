@@ -94,6 +94,7 @@ export default {
     align-items: center;
     background-color: #9dd1d5;
     margin-bottom: 25px;
+    overflow: hidden;
   }
   .you-know-group {
     display: flex;

@@ -39,7 +39,6 @@ export default {
   },
   data () {
     return {
-      handle_hint: true,
       hintShow: true,
       carouselIndex: 0,
       heartActive: false,
@@ -49,6 +48,7 @@ export default {
   },
   methods: {
     handle_nav_click (index, from) {
+      this.hintShow = false
       let theLength = this.carouselMenu.length
       if (index >= 0 && index < theLength) {
         for (let i = 0; i < theLength; i++) {
@@ -111,20 +111,7 @@ export default {
         case 'touchend':
           this.onTouch = false
       }
-    },
-    handle_scroll () {
-      let currentH = window.scrollY
-      const targetH = $(this.$el).offset().top - window.innerHeight * 0.8
-      if (currentH > targetH && this.handle_hint) {
-        this.handle_hint = false
-        setTimeout(() => {
-          this.hintShow = false
-        }, 1888)
-      }
     }
-  },
-  mounted () {
-    window.addEventListener('scroll', this.handle_scroll)
   }
 }
 </script>
@@ -174,6 +161,7 @@ export default {
       flex-shrink: 0;
       width: 100%;
       height: 100%;
+      touch-action: none;
       img{
         width: 100%;
         height: 100%;
